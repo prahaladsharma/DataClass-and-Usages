@@ -30,9 +30,9 @@ Additionally, the generation of data class members follows these rules with rega
 **Properties declared in the class body
 The compiler only uses the properties defined inside the primary constructor for the automatically generated functions. To exclude a property from the generated implementations, declare it inside the class body:
 
-      **data class Person(val name: String) {
+      data class Person(val name: String) {
         var age: Int = 0
-      }**
+      }
 In the example below, only the name property is used by default inside the .toString(), .equals(), .hashCode(), and .copy() implementations, and there is only one component function, .component1().
 
 The age property is declared inside the class body and is excluded. Therefore, two Person objects with the same name but different age values are considered equal since .equals() only evaluates properties from the primary constructor:
